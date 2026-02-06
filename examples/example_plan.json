@@ -1,0 +1,29 @@
+{
+  "id": "example_research_001",
+  "description": "Research AI safety papers and generate summary report",
+  "steps": [
+    {
+      "action": "search_papers",
+      "service": "arxiv",
+      "query": "AI safety alignment",
+      "max_results": 50
+    },
+    {
+      "action": "fetch_papers",
+      "sources": ["arxiv", "semantic_scholar"]
+    },
+    {
+      "action": "analyze_papers",
+      "method": "summarization",
+      "model": "claude-sonnet-4"
+    },
+    {
+      "action": "generate_report",
+      "format": "pdf",
+      "include_citations": true
+    }
+  ],
+  "estimated_time": 1800,
+  "estimated_cost": 15.50,
+  "required_permissions": ["read", "write", "api_access"]
+}

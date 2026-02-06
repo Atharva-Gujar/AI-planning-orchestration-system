@@ -1,0 +1,30 @@
+{
+  "id": "data_scraping_002",
+  "description": "Scrape 5000 product listings from e-commerce sites",
+  "steps": [
+    {
+      "action": "scrape_websites",
+      "urls": ["site1.com", "site2.com", "site3.com"],
+      "count": 5000
+    },
+    {
+      "action": "clean_data",
+      "remove_duplicates": true
+    },
+    {
+      "action": "extract_features",
+      "fields": ["title", "price", "rating", "reviews"]
+    },
+    {
+      "action": "store_database",
+      "table": "products"
+    }
+  ],
+  "estimated_time": 3600,
+  "estimated_cost": 45.0,
+  "required_permissions": ["read", "write"],
+  "metadata": {
+    "priority": "high",
+    "department": "data_science"
+  }
+}

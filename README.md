@@ -160,4 +160,3 @@ This project is in active development. Contributions welcome, especially:
 
 
 **Tether: Because AI agents need to stay grounded in reality.**
-

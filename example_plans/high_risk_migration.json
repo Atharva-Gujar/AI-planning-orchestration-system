@@ -1,0 +1,34 @@
+{
+  "id": "high_risk_migration_003",
+  "description": "Migrate production database to new schema",
+  "steps": [
+    {
+      "action": "create_backup",
+      "destination": "s3://backups/prod-db"
+    },
+    {
+      "action": "run_migration_script",
+      "script": "migrations/v2.0.sql"
+    },
+    {
+      "action": "verify_data_integrity",
+      "sample_size": 10000
+    },
+    {
+      "action": "update_application_config",
+      "config_file": "app.yaml"
+    },
+    {
+      "action": "rollback_on_failure",
+      "enabled": true
+    }
+  ],
+  "estimated_time": 5400,
+  "estimated_cost": 150.0,
+  "required_permissions": ["read", "write", "admin"],
+  "metadata": {
+    "priority": "critical",
+    "department": "engineering",
+    "requires_approval": true
+  }
+}

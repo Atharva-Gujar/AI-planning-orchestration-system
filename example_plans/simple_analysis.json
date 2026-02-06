@@ -1,0 +1,26 @@
+{
+  "id": "simple_analysis_001",
+  "description": "Analyze 100 customer reviews for sentiment",
+  "steps": [
+    {
+      "action": "fetch_reviews",
+      "source": "database",
+      "count": 100
+    },
+    {
+      "action": "sentiment_analysis",
+      "method": "transformer"
+    },
+    {
+      "action": "generate_report",
+      "format": "pdf"
+    }
+  ],
+  "estimated_time": 600,
+  "estimated_cost": 5.0,
+  "required_permissions": ["read"],
+  "metadata": {
+    "priority": "medium",
+    "department": "marketing"
+  }
+}
